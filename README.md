@@ -24,7 +24,7 @@ Ask for the first output:
 
 	askFor();
 
-Perfect, you're input is rolling. :)
+Perfect, the array of objects or numbers is rolling. :)
 
 ## Installation
 
