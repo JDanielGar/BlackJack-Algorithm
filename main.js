@@ -5,9 +5,9 @@ shuffle_out.addEventListener('click', shufflerOut);
 
 var card =
 {
-  'letra': '',
-  'valor': 0,
-  'palo': '',
+  'letter': '',
+  'value': 0,
+  'suits': '',
   'color': ''
 };
 

@@ -21,14 +21,14 @@ h2 {
   font-family: 'Inconsolata', monospace;
   color: maroon;
 }
-#cards{
-  background: linear-gradient(-15deg, slategray, lightslategray);
-  border-width: 0px 4px 1px 4px;
-  border-color:darkslategray;
+#canvas-card, #dealer, #you{
+  background: darkslategray;
+  border-width: 0px 4px 0px 4px;
+  border-color: black;
   border-radius: 5px;
   border-style: solid;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 .buttons {
   width: 60%;
