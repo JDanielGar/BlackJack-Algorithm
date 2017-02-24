@@ -1,6 +1,7 @@
-shuffler_button = document.getElementById('shuffle-button');
-document.addEventListener('click', shufflerIn);
-
+shuffle_in = document.getElementById('shuffle-in');
+shuffle_out = document.getElementById('shuffle-out');
+shuffle_in.addEventListener('click', shufflerIn);
+shuffle_out.addEventListener('click', shufflerOut);
 
 var card =
 {
@@ -43,7 +44,8 @@ function shufflerIn(){
   while(cards_pushed<52) {
     var slot = shuffleSlot(number_slots);
     for (var a = 0; a < number_slots.length ; a++){
-      var node=number_slots[a];
+      var slot_picked=Math.floor(Math.random() * 3);
+      var node=number_slots[slot_picked];
       slot_machine['node_'+node].push(deck[cards_pushed]);
       cards_pushed++;
     }
@@ -51,3 +53,14 @@ function shufflerIn(){
 }
 
 // Método para elegir slot y sacar cartas
+
+var output_deck=[]
+
+function shufflerOut(){
+  for(var i = 0; i<13; i++){
+    var slot_picked=Math.floor(Math.random() * 4)+1;
+    var card_picked=Math.floor(Math.random() * slot_machine['node_'+slot_picked].length);
+    output_deck.push(slot_machine['node_'+slot_picked][card_picked]);
+    slot_machine['node_'+slot_picked].splice(card_picked, 1);
+  }
+}
