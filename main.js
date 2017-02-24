@@ -27,24 +27,25 @@ var slot_machine = {
   'node_3' : [],
   'node_4' : []
 };
-// Metodo barajador de rauras - Cambia posicion de numeros en un array.
+// Método barajador de rauras - Cambia posicion de numeros en un array.
 
 function shuffleSlot(o) {
     for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };
 
-// Metodo para barajar las cartas
+// Método para barajar las cartas
+
+var number_slots=[1, 2, 3, 4];
 
 function shufflerIn(){
-  for(var i=0; i<52; i++){
-    var number_slots=[1, 2, 3, 4];
-    for (var i = 0; i < 52; i++) {
-      var slot = shuffleSlot(number_slots);
-      for (var i = 0; i < number_slots ; i++) {
-        var node=number_slots[i]
-        slot_machine['node_'+node].push(deck[i]);
-      }
+  for (var i = 0; i < 52; i++) {
+    var slot = shuffleSlot(number_slots);
+    for (var a = 0; a < number_slots.length ; a++) {
+      var node=number_slots[a];
+      slot_machine['node_'+node].push(deck[i]);
     }
   }
 }
+
+// Método para elegir slot y sacar cartas
