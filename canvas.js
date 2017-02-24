@@ -10,16 +10,9 @@ function drawBackground(){
   card.fillRect(5, 5, 60, 85);
 }
 
-function drawCard(){
-  var color = prompt('Color:');
-  var letter = prompt('Letra:');
-  var suit = prompt('Palo:');
-
-  // Canvas
-
+function drawCard(color, letter, suit){
   var canvas = document.getElementById('canvas-card');
   var card = canvas.getContext('2d');
-
   drawBackground();
   cardColor(color);
   letterCard(color, letter);
@@ -29,11 +22,13 @@ function drawCard(){
 function cardColor(color){
   var canvas = document.getElementById('canvas-card');
   var card = canvas.getContext('2d');
+
   if(color=='ROJO'){
     card.strokeStyle='rgb(255, 0, 0)';
   } else {
     card.strokeStyle='rgb(0, 0, 0)';
   }
+
   card.beginPath();
     card.lineWidth=2;
     card.moveTo(5, 90);
@@ -48,66 +43,52 @@ function cardColor(color){
 function letterCard(color, letter){
   var canvas = document.getElementById('canvas-card');
   var card = canvas.getContext('2d');
+
   card.font = '15px serif';
   if (color=='ROJO') {
     card.fillStyle = 'rgb(255, 0, 0)';
   } else {
     card.fillStyle = 'rgb(0, 0, 0)';
   }
+
   card.fillText(letter, 10, 20);
+
 }
 
 function suitCard(color, suit){
   var canvas = document.getElementById('canvas-card').getContext('2d')
-  var img= new Image();
+  card.font = '50px serif';
   if(suit=='PICA'){
     if(color=='ROJO'){
-      img.onload = function(){
-        canvas.drawImage(img, 20, 25);
-      };
-      img.src = 'assets/pica-r.gif';
+      canvas.fillStyle = 'rgb(255, 0, 0)';
+      canvas.fillText('♠', 22.5, 62.5);
     } else {
-      img.onload = function(){
-        canvas.drawImage(img, 20, 25);
-      };
-      img.src = 'assets/pica-n.gif';
+      canvas.fillStyle = 'rgb(0, 0, 0)';
+      canvas.fillText('♠', 22.5, 62.5);
     }
   } else if (suit=='TREVOL') {
     if(color=='ROJO'){
-      img.onload = function(){
-        canvas.drawImage(img, 20, 25);
-      };
-      img.src = 'assets/trevol-r.gif';
+      canvas.fillStyle = 'rgb(255, 0, 0)';
+      canvas.fillText('♣', 19, 62.5);
     } else {
-      img.onload = function(){
-        canvas.drawImage(img, 20, 25);
-      };
-      img.src = 'assets/trevol-n.gif';
+      canvas.fillStyle = 'rgb(0, 0, 0)';
+      canvas.fillText('♣', 19, 62.5);
     }
   } else if (suit=='CORAZON') {
     if(color=='ROJO'){
-      img.onload = function(){
-        canvas.drawImage(img, 20, 25);
-      };
-      img.src = 'assets/corazon-r.gif';
+      canvas.fillStyle = 'rgb(255, 0, 0)';
+      canvas.fillText('♥', 19, 62.5);
     } else {
-      img.onload = function(){
-        canvas.drawImage(img, 20, 25);
-      };
-      img.src = 'assets/corazon-n.gif';
+      canvas.fillStyle = 'rgb(0, 0, 0)';
+      canvas.fillText('♥', 19, 62.5);
     }
   } else {
     if(color=='ROJO'){
-      img.onload = function(){
-        canvas.drawImage(img, 20, 25);
-      };
-      img.src = 'assets/rombo-r.gif';
+      canvas.fillStyle = 'rgb(255, 0, 0)';
+      canvas.fillText('♦', 22.5, 62.5);
     } else {
-      img.onload = function(){
-        canvas.drawImage(img, 20, 25);
-      };
-      img.src = 'assets/rombo-n.gif';
+      canvas.fillStyle = 'rgb(0, 0, 0)';
+      canvas.fillText('♦', 22.5, 62.5);
     }
   }
 }
-drawCard();

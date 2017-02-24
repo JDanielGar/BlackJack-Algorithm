@@ -1,15 +1,12 @@
+ask_for=document.getElementById('ask-for');
+ask_for.addEventListener('click', askFor);
+
 shuffle_in = document.getElementById('shuffle-in');
-shuffle_out = document.getElementById('shuffle-out');
 shuffle_in.addEventListener('click', shufflerIn);
+
+shuffle_out = document.getElementById('shuffle-out');
 shuffle_out.addEventListener('click', shufflerOut);
 
-var card =
-{
-  'letter': '',
-  'value': 0,
-  'suits': '',
-  'color': ''
-};
 
 // Seleccion de numero de barajas
 
@@ -63,4 +60,10 @@ function shufflerOut(){
     output_deck.push(slot_machine['node_'+slot_picked][card_picked]);
     slot_machine['node_'+slot_picked].splice(card_picked, 1);
   }
+}
+
+// Juego
+function askFor(){
+  drawCard(output_deck[0].color, output_deck[0].letra, output_deck[0].palo);
+  output_deck.splice(0, 1);
 }
