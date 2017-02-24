@@ -8,33 +8,28 @@ shuffle_out = document.getElementById('shuffle-out');
 shuffle_out.addEventListener('click', shufflerOut);
 
 
-// Seleccion de numero de barajas
-
-function numeroBarajas(){
-  decknumber = prompt('Numero de barajas:');
-  for(var i=0; i<=decknumber; i++){
-    decks.push(deck);
-  }
-}
 // Ranuras maquina
 
 var slot;
-var slot_machine = {
-  'node_1' : [],
-  'node_2' : [],
-  'node_3' : [],
-  'node_4' : []
-};
-// Método barajador de rauras - Cambia posicion de numeros en un array.
+var slot_machine={};
+var number_slots=[];
+
+function nodePush(number_of_node){
+  for(var i=0; i<number_of_node; i++){
+      slot_machine['node_'+(i+1)]=[];
+      number_slots.push[i+1];
+  }
+  console.log(slot_machine)
+}
+
+// Método barajador de ranuras - Cambia posicion de numeros en un array.
 
 function shuffleSlot(o) {
     for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };
 
-// Métodos para barajar las cartas de entrada
-
-var number_slots=[1, 2, 3, 4];
+// Métodos para barajar las cartas de entrada.
 
 function shufflerIn(){
   var cards_pushed = 0;
@@ -83,9 +78,6 @@ function askFor(){
   if(counting_cards>=13){
     counting_cards=0;
     shufflerOut();
-    deck=inner_deck;
-    inner_deck=[];
-    shufflerIn(deck);
   }
 }
 
