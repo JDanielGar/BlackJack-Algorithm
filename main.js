@@ -39,11 +39,13 @@ function shuffleSlot(o) {
 var number_slots=[1, 2, 3, 4];
 
 function shufflerIn(){
-  for (var i = 0; i < 52; i++) {
+  var cards_pushed = 0;
+  while(cards_pushed<52) {
     var slot = shuffleSlot(number_slots);
-    for (var a = 0; a < number_slots.length ; a++) {
+    for (var a = 0; a < number_slots.length ; a++){
       var node=number_slots[a];
-      slot_machine['node_'+node].push(deck[i]);
+      slot_machine['node_'+node].push(deck[cards_pushed]);
+      cards_pushed++;
     }
   }
 }
