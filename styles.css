@@ -1,0 +1,35 @@
+body {
+  background: linear-gradient(-90deg, teal, lightseagreen);
+}
+.main-player{
+  width: 50%;
+  height: 60em;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.tittle {
+  text-align: center;
+  color: paleturquoise;
+  font-family: 'Baloo', cursive;
+}
+.Jack {
+  color: darkblue;
+}
+h2 {
+  font-family: 'Inconsolata', monospace;
+  color: maroon;
+}
+#cards{
+  background: linear-gradient(-15deg, slategray, lightslategray);
+  border-width: 0px 4px 1px 4px;
+  border-color:darkslategray;
+  border-radius: 5px;
+  border-style: solid;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.buttons {
+  width: 60%;
+}
