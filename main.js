@@ -24,11 +24,16 @@ function nodePush(number_of_node){
 
 // Método barajador de ranuras - Cambia posicion de numeros en un array.
 
-function shuffleSlot(o) {
-    for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    return o;
+function shuffleSlot(array) {
+	for(var z=0; z<(array.length-1); z++){
+    	var j, x, i = array.length;
+    	j = parseInt(Math.random() * i);
+    	x = array[--i];
+    	array[i] = array[j];
+    	array[j] = x;
+    }
+    return array;
 };
-
 // Métodos para barajar las cartas de entrada.
 
 function shufflerIn(){
@@ -78,6 +83,9 @@ function askFor(){
   if(counting_cards>=13){
     counting_cards=0;
     shufflerOut();
+    deck=inner_deck;
+    inner_deck=[];
+    shufflerIn(deck);
   }
 }
 
