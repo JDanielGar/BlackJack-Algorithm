@@ -17,7 +17,7 @@ var number_slots=[];
 function nodePush(number_of_node){
   for(var i=0; i<number_of_node; i++){
       slot_machine['node_'+(i+1)]=[];
-      number_slots.push[i+1];
+      number_slots.push(i+1);
   }
   console.log(slot_machine)
 }
