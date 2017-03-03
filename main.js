@@ -7,6 +7,9 @@ shuffle_in.addEventListener('click', shufflerIn);
 shuffle_out = document.getElementById('shuffle-out');
 shuffle_out.addEventListener('click', shufflerOut);
 
+shuffle_out = document.getElementById('nodePush');
+shuffle_out.addEventListener('click', nodePush);
+
 
 // Ranuras maquina
 
@@ -14,12 +17,13 @@ var slot;
 var slot_machine={};
 var number_slots=[];
 
-function nodePush(number_of_node){
+
+function nodePush(){
+  var number_of_node= document.getElementById('nodos').value;
   for(var i=0; i<number_of_node; i++){
       slot_machine['node_'+(i+1)]=[];
       number_slots.push(i+1);
   }
-  console.log(slot_machine)
 }
 
 // Método barajador de ranuras - Cambia posicion de numeros en un array.
@@ -60,7 +64,7 @@ var counting_cards=0;
 
 function shufflerOut(){
   for(var i = 0; i<13; i++){
-    var slot_picked=Math.floor(Math.random() * 4)+1;
+    var slot_picked=Math.floor(Math.random() * number_slots.length)+1;
     if(slot_machine['node_'+slot_picked].length!=0){
       var card_picked=Math.floor(Math.random() * slot_machine['node_'+slot_picked].length);
       output_deck.push(slot_machine['node_'+slot_picked][card_picked]);
